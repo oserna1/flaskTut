@@ -1,4 +1,4 @@
-flaskvenv/
+venv/
 
 *.pyc
 __pycache__/
