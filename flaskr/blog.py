@@ -90,7 +90,7 @@ def like(id):
             (1, id)
         )
         db.commit()
-    return redirect(url_for('blog.index'))
+    return redirect(request.referrer)
 
 @bp.route('/<int:id>/update', methods=('GET', 'POST'))
 @login_required
