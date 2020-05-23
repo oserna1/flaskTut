@@ -18,6 +18,12 @@
         {% if g.user['id'] == post['author_id'] %}
           <a class="action" href="{{ url_for('blog.update', id=post['id']) }}">Edit</a>
         {% endif %}
+        {% if post['liked'] == 1 %}
+          <a class="action" href="{{ url_for('blog.like', id=post['id']) }}">
+              <img src="https://img.icons8.com/pastel-glyph/20/000000/facebook-like.png"/>Unlike</a>
+        {% else %}
+          <a class="action" href="{{ url_for('blog.like', id=post['id']) }}">Like</a>
+        {% endif %}
       </header>
       <p class="body">{{ post['body'] }}</p>
     </article>
